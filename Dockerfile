@@ -8,4 +8,4 @@ RUN git clone -b next --single-branch git://github.com/OpenTSDB/opentsdb.git /op
     cd /opt/opentsdb && bash ./build.sh
 ADD opt/qnib/opentsdb/bin/create_tsdb_tables.sh opt/qnib/opentsdb/bin/start_opentsdb.sh /opt/qnib/opentsdb/bin/
 ADD etc/supervisord.d/opentsdb.ini /etc/supervisord.d/
-ADD etc/consul.d/check_tsdb.json /etc/consul.d/
+ADD etc/consul.d/check_*.json /etc/consul.d/

@@ -1,0 +1,13 @@
+{
+  "services": [
+    {
+        "id": "tsdb_tables",
+        "name": "tsdb_tables",
+        "tags": [],
+        "checks": [{
+            "script": "echo -n 'Expect 4 tsdb-tables: ';curl -s http://localhost:60010/tablesDetailed.jsp|grep -c '<td>tsdbs' || echo 'No ^tsdb tables are found in HBase'",
+            "interval": "10s"
+        }]
+    }
+  ]
+}
