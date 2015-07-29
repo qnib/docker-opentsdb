@@ -28,6 +28,7 @@ grafana2:
     hostname: grafana2
     environment:
     - DC_NAME=dc1
+    - RANDOM_METRICS=true
     ports:
     - 3000:3000
     links:
