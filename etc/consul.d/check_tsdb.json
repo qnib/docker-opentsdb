@@ -1,0 +1,14 @@
+{
+  "services": [
+    {
+        "id": "opentsdb",
+        "name": "opentsdb",
+        "tags": [],
+        "port": 4242,
+        "checks": [{
+            "script": "curl -s http://localhost:4242/version/",
+            "interval": "10s"
+        }]
+    }
+  ]
+}
