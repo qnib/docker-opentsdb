@@ -24,7 +24,7 @@ zookeeper0:
 opentsdb:
     hostname: opentsdb
     dns: 127.0.0.1
-    image: qnib/opentsdb
+    image: qnib/opentsdb:1.1.1
     #build: .
     environment:
     - DC_NAME=dc1
