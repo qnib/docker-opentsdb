@@ -3,6 +3,8 @@ consul:
     image: qnib/consul
     environment:
     - DC_NAME=dc1
+    - RUN_SERVER=true
+    - BOOTSTRAP_CONSUL=true
     ports:
     - "8500:8500"
     dns: 127.0.0.1
@@ -21,10 +23,26 @@ zookeeper0:
     - 2181:2181
     privileged: true
 
+zkui:
+    hostname: zkui
+    dns: 127.0.0.1
+    dns_search:
+    - node.consul
+    - service.consul
+    image: qnib/zkui
+    environment:
+    - DC_NAME=dc1
+    links:
+    - zookeeper0:zookeeper
+    - consul:consul
+    ports:
+    - 9090:9090
+    privileged: true
+
 opentsdb:
     hostname: opentsdb
     dns: 127.0.0.1
-    image: qnib/opentsdb:1.1.1
+    image: qnib/opentsdb
     #build: .
     environment:
     - DC_NAME=dc1

@@ -1,5 +1,5 @@
 ###### grafana images
-FROM qnib/hbase:1.1.1
+FROM qnib/hbase:1.1
 RUN yum install -y \
 		   automake \
                    bsdtar \
